@@ -4,17 +4,14 @@ public static class VehicleFactory
 {
     public static IVehicle GetVehicle(int numberOfTires)
     {
-        IVehicle vehicleType = null;
         switch (numberOfTires)
         {
             case 4:
-                vehicleType = new Car();
-                break;
+                return new Car();
             case 2:
-                vehicleType = new Motorcycle();
-                break;
+                return new Motorcycle();
+            default:
+                return null;
         }
-        
-        return vehicleType;
     }
 }
